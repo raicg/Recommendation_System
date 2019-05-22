@@ -1,0 +1,48 @@
+input#title {
+  width: 237px;
+  font-size: 18px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+input#company {
+  width: 237px;
+  font-size: 18px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+select#genre {
+  margin-top: -2.65em;
+}
+
+div.control {
+  margin-top: -2.2em;
+}
+
+hr.search {
+  margin-top: -1.7em;
+  height: 3px;
+  margin-left: -2.8em;
+  margin-right: -2.75em;
+  background-color: #3A3F44;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+

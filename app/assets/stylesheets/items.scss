@@ -1,0 +1,74 @@
+p.item {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+hr.result {
+  height: 3px;
+  background-color: #3A3F44;
+  margin-left: -2.8em;
+  margin-right: -2.75em;
+  margin-bottom: -1em;
+}
+
+
+div.suggestions {
+  margin-top: 1.5em;
+}
+
+hr.list {
+  height: 3px;
+  margin-top: -0.6em;
+  margin-botom: 3em;
+  margin-left: -2.8em;
+  margin-right: -2.75em;
+  background-color: #3A3F44;
+}
+
+div.items {
+  margin-top: -2em;
+  overflow:auto;
+  white-space: nowrap;
+}
+
+div.recommendations {
+  margin-bottom: 1em;
+}
+
+h2 {
+  margin-top: -0.8em;
+  margin-bottom: 2em;
+}
+
+h2.suggestions {
+  margin-top: -0.8em;
+  margin-bottom: 1em;
+}
+
+h2.result-recommendations {
+  margin-top: -0.8em;
+  margin-bottom: 0.8em;
+}
+
+h2.result {
+  margin-top: 1em;
+  margin-bottom: 0.8em;
+}
+
+h2.all-the-items {
+  margin-top: -0.5em;
+  margin-bottom: 1.6em;
+}
+
+a.move-scroll-left {
+  position: absolute;
+  left: 10px;
+  margin-top: 80px;
+}
+
+a.move-scroll-right {
+  position: absolute;
+  right: 10px;
+  margin-top: 80px;
+}

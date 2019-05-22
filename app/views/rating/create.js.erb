@@ -1,0 +1,10 @@
+$(document).ready(function(){
+  if (<%= @like %> == true) {
+    $("button#like").prop('disabled', true);
+    $("button#dislike").removeAttr("disabled");
+  } else {
+    $("button#like").removeAttr("disabled");
+    $("button#dislike").prop('disabled', true);
+  }
+});
+

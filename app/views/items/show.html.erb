@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="details">
+  <head>
+    <title>Recommendation System</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'details', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <center>
+      <div class="details">
+
+        <% if @item.image != nil %>
+          <img src="<%= @item.image %>"/>
+        <% else %>
+          <img src="<%= image_url('default-image.png') %>"/>
+        <% end %>
+
+        <h1><b><%= @item.title %></b></h1>
+        <p><%= @item.genre %></p>
+
+        <% if @item.yearLastSeason != nil %>
+          <label>Last Season:</label> <span><%= @item.yearLastSeason %></span >
+        <% end %>
+	  <br/><br/>
+
+        
+        <% if @item.company != nil %>
+          <label>Productor Companies:</label> 
+          <br/>
+          <label><%= @item.company %></label>
+        <% end %>
+
+        <br/><br/>
+        <div class="columns is-multiline is-desktop is-tablet is-mobile create">
+
+          <div class="column is-2 is-offset-4">  
+            <%= button_to rating_index_path(item_id: @item.id, like: true, format: "js"), remote: true, :disabled => @disableLikeButton, :id => "like" do %>
+              <i class="far fa-thumbs-up fa-3x"></i>          
+            <% end %>
+          </div>
+          <div class="column is-2">  
+            <%= button_to rating_index_path(item_id: @item.id, like: false, format: "js"), remote: true, :disabled => @disableDislikeButton, :id => "dislike" do %>
+              <i class="far fa-thumbs-down fa-3x"></i>          
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

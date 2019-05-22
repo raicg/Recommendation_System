@@ -1,0 +1,58 @@
+<div class="recommendations">
+  <% if @recommendations.any? %>
+    <h2 class="result-recommendations is-size-2-touch">Recommendations:</h2>
+    <br/>
+    <div class="items itemsRecommendation columns is-desktop is-tablet is-mobile">
+
+      <a class="move-scroll-left" onClick="scrollDiv('recommendations', -100)"><i class="fas fa-3x fa-angle-double-left"></i></a>
+      <%= render @recommendations %>
+      <a class="move-scroll-right" onClick="scrollDiv('recommendations', 100)"><i class="fas fa-3x fa-angle-double-right"></i></a>
+
+    </div>
+  <% end %>
+
+  <% if @itemsLike.any? %>
+    <hr class="result"/>
+
+    <h2 class="result is-size-2-touch">Items that you like:</h2>
+    <br/>
+    <div class="items itemsLike columns is-desktop is-tablet is-mobile">
+    
+      <a class="move-scroll-left" onClick="scrollDiv('itemsLike', -100)"><i class="fas fa-3x fa-angle-double-left"></i></a>
+      <%= render @itemsLike %>
+      <a class="move-scroll-right" onClick="scrollDiv('itemsLike', 100)"><i class="fas fa-3x fa-angle-double-right"></i></a>
+   
+    </div>
+  <% end %>
+
+  <% if @itemsDontLike.any? %>
+    <hr class="result"/>
+
+    <h2 class="result is-size-2-touch">Items that you don't like:</h2>
+    <br/>
+    <div class="items itemsDontLike columns is-desktop is-tablet is-mobile">
+    
+      <a class="move-scroll-left" onClick="scrollDiv('itemsDontLike', -100)"><i class="fas fa-3x fa-angle-double-left"></i></a>
+      <%= render @itemsDontLike %>
+      <a class="move-scroll-right" onClick="scrollDiv('itemsDontLike', 100)"><i class="fas fa-3x fa-angle-double-right"></i></a>
+
+    </div>
+  <% end %>
+
+  <% if @newItems.any? %>
+    <hr class="result"/>
+
+    <h2 class="result is-size-2-touch">New items:</h2>
+    <br/>
+    <div class="items newItems columns is-desktop is-tablet is-mobile">
+    
+      <a class="move-scroll-left" onClick="scrollDiv('newItems', -100)"><i class="fas fa-3x fa-angle-double-left"></i></a>
+      <%= render @newItems %>
+      <a class="move-scroll-right" onClick="scrollDiv('newItems', 100)"><i class="fas fa-3x fa-angle-double-right"></i></a>
+   
+    </div>
+  <% end %>
+</div>
+
+
+<%= javascript_include_tag 'result', 'data-turbolinks-track': 'reload' %>

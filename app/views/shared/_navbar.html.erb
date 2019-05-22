@@ -1,0 +1,76 @@
+
+<section class="hero">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar is-mobile is-desktop">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item is-size-3-touch" href="/">
+            Recommendation System
+          </a>
+          <a class="navbar-burger">
+            <i class="menu fa fa-bars fa-3x has-text-white-bis"></i>
+          </a>
+        </div>
+        <div id="navbarMenuHero1" class="navbar-menu">
+          <div class="navbar-end">
+            <%= link_to root_path, class: "navbar-item is-size-3-touch" do %>
+              Home
+            <% end %>
+            <%= link_to about_path, class: "navbar-item is-size-3-touch" do %>
+              About
+            <% end %>
+
+            <% if user_signed_in? %>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <div class="navbar-link is-size-3-touch">
+                  Recommendations
+                </div>
+                <div id="moreDropdown" class="navbar-dropdown ">
+                
+                  <%= link_to destroyAll_rating_index_path, class: "navbar-item is-size-3-touch" do %>
+                    <div class="level is-mobile">
+                      <div class="level-left">
+                        <div class="level-item">
+                          <p>
+                            <strong>New Recommendations</strong>
+                            <br>
+                            <small>Get new recommendations of the system</small>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                  
+                  <%= link_to result_item_index_path, class: "navbar-item is-size-3-touch" do %>
+                    <div class="level is-mobile">
+                      <div class="level-left">
+                        <div class="level-item">
+                          <p>
+                            <strong>See Recommendations</strong>
+                            <br>
+                            <small>See what the system recommends for you</small>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                </div>
+              </div>
+              <%= link_to destroy_user_session_path, method: :delete, class: "navbar-item is-size-3-touch" do %>
+                Logout
+              <% end %>
+            <% else %>
+              <%= link_to new_user_session_path, class: "navbar-item is-size-3-touch" do %>
+                Login
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<%= javascript_include_tag 'navbar', 'data-turbolinks-track': 'reload' %>

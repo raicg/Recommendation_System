@@ -1,0 +1,9 @@
+<h2 class="destroyAll is-size-1-touch">Do you want to delete your ratings?</h2>
+<%= form_tag(destroyAll_rating_index_path, method: :get) do %>  
+  <input type="radio" name="delete" value="true" checked"><label class=" is-size-2-touch"> Yes </label>
+  <br/>
+  <input type="radio" name="delete" value="false"><label class="is-size-2-touch"> No </label>
+  <br/>
+  <br/>
+  <%= submit_tag 'Continue', class: "button is-white is-outlined is-normal is-size-3-touch"%>
+<% end %>

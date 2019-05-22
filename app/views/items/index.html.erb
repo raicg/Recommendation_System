@@ -1,0 +1,39 @@
+<div class="search columns is-desktop is-tablet is-mobile">
+  <%= render "search" %>
+</div>
+
+<hr class="search"/>
+
+<br/>
+
+<% if @items != nil %>
+
+  <div class="recommendations">
+    <% if @recommendations != nil %>
+      <% if @recommendations.empty? == false %>
+        <h2 class="suggestions is-size-2-touch">Suggestions:</h2>
+        <div class="columns is-multiline is-desktop is-tablet is-mobile">
+          <%= render @recommendations %>
+        </div>
+        <hr class="list"/>
+      <% end %>
+    <% end %>
+  </div>
+
+  <h2 class="all-the-items is-size-2-touch">All the items:</h2>
+  <div class="items columns is-multiline is-desktop is-tablet is-mobile">
+    <%= render @items %>
+  </div>
+  
+  <br/>
+  
+  <div class="pages">
+    <%= will_paginate @items %>
+  </div>
+  
+<% else %>
+  <br/><br/>
+  <h2 class="is-size-2-touch">Search for <%= @verifyMin %> favorite items first.</h2>
+  <br/>
+
+<% end %>
